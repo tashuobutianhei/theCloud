@@ -41,7 +41,15 @@ var createVideo =function (callback) {
         callback(null,'video')
     });
 }
-
+var createTrash =function (callback) {
+    fs.mkdir(path.join(__dirname, 'public/'+username+'/trash'), function(err) {
+        if (err) {
+            throw err;
+        }
+        //console.log('video')
+        callback(null,'trash')
+    });
+}
 
 module.exports=function(user){
     username=user;
@@ -51,12 +59,12 @@ module.exports=function(user){
                 throw err;
             }else{
                 async.series(
-                    [createImg, createDoc, createVideo, createRadio],
+                    [createImg, createDoc, createVideo, createRadio,createTrash],
                     function(err,result){
                         if (err) {
                             console.log(err);
                         }
-                        //console.log(result);
+                        console.log(result);
                         callback(null,'ok')
                     })
             }

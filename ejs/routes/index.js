@@ -161,6 +161,9 @@ router.get('/huifu',function (req,res) {
 
 
 router.get('/getFile',function (req,res,next) {
+    /*
+    * type:
+    * */
     res.setHeader('Content-Type', 'text/plain;charset=UTF-8');
     res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8080');
     res.setHeader('Access-Control-Allow-Credentials','true');
