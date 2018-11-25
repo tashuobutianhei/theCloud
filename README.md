@@ -8,7 +8,7 @@
 
 #### 数据库采用mongodb+mongoose进行操作，相应建立文档如下
 
-(```)
+```
 let userSchema = new Schema({
     username : { type: String },
     password: {type: String},
@@ -52,5 +52,4 @@ let userSchema = new Schema({
             updatedAt: 'updated'
     }
 });
-
-(```)
+```
